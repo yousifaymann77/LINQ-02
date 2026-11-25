@@ -16,6 +16,20 @@ namespace LINQ_02
             }
             #endregion
 
+
+            #region 2. show page 2 of products, with page size = 5
+            int page = 2;
+            int pageSize = 5;
+
+            var page2 = ProductList.Skip((page - 1) * pageSize).Take(pageSize);
+            foreach (var p in page2)
+            {
+                Console.WriteLine(p);
+            }
+            #endregion
+
+
+
         }
     }
 }
