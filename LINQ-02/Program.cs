@@ -74,7 +74,13 @@ namespace LINQ_02
 
             #endregion
 
-
+            #region 8. Find all categories that have MORE THAN 3 products
+            var result4 = ProductList.GroupBy(p => p.Category).Where(g => g.Count() > 3);
+            foreach (var g in result4)
+            {
+                Console.WriteLine($"{g.Key}: {g.Count()}");
+            }
+            #endregion
 
         }
     }
