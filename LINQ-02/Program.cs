@@ -45,6 +45,13 @@ namespace LINQ_02
             #endregion
 
 
+            #region MyRegion
+            int[] ids = { 3, 9, 13, 18 };
+            var result1 = ids.Contains(9);
+            Console.WriteLine(result1);
+            #endregion
+
+
 
         }
     }
