@@ -112,7 +112,13 @@ namespace LINQ_02
             #endregion
 
 
-
+            #region 12. Get a distinct list of all product categories
+            var disList = ProductList.DistinctBy(p => p.Category);
+            foreach (var p in disList)
+            {
+                Console.WriteLine(p);
+            }
+            #endregion
 
         }
     }
