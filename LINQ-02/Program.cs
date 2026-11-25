@@ -39,6 +39,12 @@ namespace LINQ_02
             #endregion
 
 
+            #region 4. Check if ALL products in the "Seafood" category are in stock
+            var Result = ProductList.Where(p => p.Category == "Seafood").All(p => p.UnitsInStock > 0);
+            Console.WriteLine(Result);
+            #endregion
+
+
 
         }
     }
