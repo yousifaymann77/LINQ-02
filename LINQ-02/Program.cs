@@ -1,5 +1,6 @@
 ﻿
 using LINQ.Models;
+using System.Diagnostics.Metrics;
 using static LINQ.DataSources.Source;
 
 namespace LINQ_02
@@ -79,6 +80,20 @@ namespace LINQ_02
             foreach (var g in result4)
             {
                 Console.WriteLine($"{g.Key}: {g.Count()}");
+            }
+            #endregion
+
+
+            #region 9. Using QUERY SYNTAX, group customers by Country, and for each group select { Country, Count, TotalOrderValue }.
+            var result5 = from c in CustomerList
+                          group c by c.Country into countryGroup
+                          select new { Country = countryGroup.Key,
+                                       Count = countryGroup.Count(), 
+                                       TotalOrderValue = countryGroup.Sum(c => c.Orders.Sum(o => o.Total))
+                          };
+            foreach (var g in result5)
+            {
+                Console.WriteLine(g);
             }
             #endregion
 
