@@ -97,6 +97,23 @@ namespace LINQ_02
             }
             #endregion
 
+
+            #region 10. Calculate the total number of units in stock across all products
+            var totalStock = ProductList.Sum(p => p.UnitsInStock);
+            Console.WriteLine($"Total Units in Stock: {totalStock}");
+            #endregion
+
+
+            #region 11. Find the CHEAPEST and MOST EXPENSIVE product prices
+            var result6 = ProductList.OrderByDescending(p => p.UnitPrice).Select(p => p.UnitPrice).First();
+            Console.WriteLine($"Most Expensive: {result6}");
+            var result7 = ProductList.OrderBy(p => p.UnitPrice).Select(p => p.UnitPrice).First();
+            Console.WriteLine($"Cheapest: {result7}");
+            #endregion
+
+
+
+
         }
     }
 }
