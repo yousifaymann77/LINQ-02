@@ -155,6 +155,14 @@ namespace LINQ_02
             Console.WriteLine(result11);
             #endregion
 
+
+            #region 18. Generate a multiplication table row for 7
+            var table7 = Enumerable.Range(1, 10).Select(n =>  n * 7 );
+            foreach (var p in table7)
+            {
+                Console.WriteLine(p);
+            }
+            #endregion
         }
-        }
+    }
 }
