@@ -172,6 +172,17 @@ namespace LINQ_02
                 Console.WriteLine(p);
             }
             #endregion
+
+
+            #region 20. Concatenate the first 3 product names with the first 3 customer company names into a single sequence.
+            var products = ProductList.Select(p => p.ProductName).Take(3);
+            var customs = CustomerList.Select(c => c.CustomerName).Take(3);
+            var result12 = products.Concat(customs);
+            foreach (var p in result12)
+            {
+                Console.Write($"{p}, ");
+            }
+            #endregion
         }
     }
 }
