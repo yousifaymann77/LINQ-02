@@ -1,6 +1,7 @@
 ﻿
 using LINQ.Models;
 using System.Diagnostics.Metrics;
+using System.Drawing;
 using static LINQ.DataSources.Source;
 
 namespace LINQ_02
@@ -135,6 +136,14 @@ namespace LINQ_02
             var result9 = list1.Except(list2, StringComparer.OrdinalIgnoreCase);
             Console.WriteLine(string.Join(", ", result9));
             #endregion
+
+
+            #region 15. Build a Dictionary<int, Product> keyed by ProductID. Then retrieve and print the product with ID = 18.
+            var pId = ProductList.ToDictionary(p => p.ProductID);
+            Console.WriteLine(pId[18]);
+            #endregion
+
+
         }
         }
 }
