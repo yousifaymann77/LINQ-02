@@ -144,6 +144,11 @@ namespace LINQ_02
             #endregion
 
 
+            #region 16. Get the first product whose price is greater than $50.
+            var result10 = ProductList.SkipWhile(p => p.UnitPrice <= 50.0000m).First();
+            Console.WriteLine(result10);
+            #endregion
+
         }
         }
 }
