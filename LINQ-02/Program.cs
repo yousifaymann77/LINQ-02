@@ -149,6 +149,12 @@ namespace LINQ_02
             Console.WriteLine(result10);
             #endregion
 
+
+            #region 17. Try to get the first product with a price > $500. it returns null instead of throwing.
+            var result11 = ProductList.SkipWhile(p => p.UnitPrice <= 550.0000m).FirstOrDefault();
+            Console.WriteLine(result11);
+            #endregion
+
         }
         }
 }
